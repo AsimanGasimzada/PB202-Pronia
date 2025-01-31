@@ -1,0 +1,48 @@
+﻿@model Product
+
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="~/assets/images/website-images/@Model.ProductImages.FirstOrDefault(x=>x.Status==true)?.Url" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">@Model.Description</p>
+        <p class="card-text">@Model.Price</p>
+    </div>
+    <ul class="list-group list-group-flush">
+
+        <li class="list-group-item">Tags:</li>
+        @foreach (var productTag in Model.ProductTags)
+        {
+            <li class="list-group-item">@productTag.Tag.Name</li>
+
+        }
+
+    </ul>
+
+    <ul class="list-group list-group-flush">
+
+        <li class="list-group-item">Category:</li>
+
+            <li class="list-group-item">@Model.Category.Name</li>
+
+        
+    </ul>
+
+
+    <ul class="list-group list-group-flush d-flex">
+
+        <li class="list-group-item">Images:</li>
+
+        @foreach (var productImage in Model.ProductImages)
+        {
+        <li class="list-group-item">
+
+            <img  src="~/assets/images/website-images/@productImage.Url"/>
+        </li>
+            
+        }
+
+
+    </ul>
+   
+</div>

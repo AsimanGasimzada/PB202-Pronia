@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PB202-Pronia.props" />
+</Project>
