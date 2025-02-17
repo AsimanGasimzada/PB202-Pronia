@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PB202_Pronia.Enums;
 using PB202_Pronia.Models;
 using PB202_Pronia.ViewModels;
 
@@ -11,10 +12,12 @@ public class AccountController : Controller
 {
     private readonly UserManager<AppUser> _userManager;
     private readonly SignInManager<AppUser> _signInManager;
-    public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+    private readonly RoleManager<IdentityRole> _roleManager;
+    public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        _roleManager = roleManager;
     }
 
     public IActionResult Login()
@@ -28,6 +31,7 @@ public class AccountController : Controller
     {
         if (!ModelState.IsValid)
             return View(vm);
+
 
         var user = await _userManager.FindByEmailAsync(vm.EmailOrUsername);
 
@@ -102,9 +106,9 @@ public class AccountController : Controller
             return View(vm);
         }
 
-        await _signInManager.SignInAsync(user,false);
+        await _signInManager.SignInAsync(user, false);
 
-        return RedirectToAction("Index","Home");
+        return RedirectToAction("Index", "Home");
     }
 
     [Authorize]
@@ -112,6 +116,17 @@ public class AccountController : Controller
     {
         await _signInManager.SignOutAsync();
 
-        return RedirectToAction("Index","Home");
+        return RedirectToAction("Index", "Home");
+    }
+
+    public async Task<IActionResult> CreateRoles()
+    {
+        foreach (var role in Enum.GetNames(typeof(IdentityRoles)))
+        {
+            IdentityRole identityRole = new() { Name = role.ToString() };
+            await _roleManager.CreateAsync(identityRole);
+        }
+
+        return Content("Ok");
     }
 }

@@ -47,6 +47,26 @@ namespace PB202_Pronia.Contexts.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ccfdb7ca-6ada-411d-be54-196fa5a390e7",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "78dbc786-5226-4028-9772-7b17eee997ea",
+                            Name = "Moderator",
+                            NormalizedName = "MODERATOR"
+                        },
+                        new
+                        {
+                            Id = "34cf98c4-6752-4334-a41a-dcd6cfa09cd4",
+                            Name = "Member",
+                            NormalizedName = "MEMBER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -134,6 +154,13 @@ namespace PB202_Pronia.Contexts.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "7c60df9f-e193-41fb-97ca-a7669fb2faca",
+                            RoleId = "ccfdb7ca-6ada-411d-be54-196fa5a390e7"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -218,6 +245,51 @@ namespace PB202_Pronia.Contexts.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "7c60df9f-e193-41fb-97ca-a7669fb2faca",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "37e364e2-f7fb-4593-8d64-1c3f71104fb3",
+                            Email = "admin@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@GMAIL.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFsNZBh+epZl9PtcEWTQ/RFyKmqg78J8CtETfv6IbL8U0KzZX/u0I38YSTzTcZRLJA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "NCSJXLWMZICDXVVDECA6D6YO74BI64A2",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
+                });
+
+            modelBuilder.Entity("PB202_Pronia.Models.BasketItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("BasketItems");
                 });
 
             modelBuilder.Entity("PB202_Pronia.Models.Category", b =>
@@ -235,6 +307,13 @@ namespace PB202_Pronia.Contexts.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = -1,
+                            Name = "PB202"
+                        });
                 });
 
             modelBuilder.Entity("PB202_Pronia.Models.Product", b =>
@@ -383,6 +462,25 @@ namespace PB202_Pronia.Contexts.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("PB202_Pronia.Models.BasketItem", b =>
+                {
+                    b.HasOne("PB202_Pronia.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PB202_Pronia.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("PB202_Pronia.Models.Product", b =>

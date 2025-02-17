@@ -2021,6 +2021,10 @@
       "PackagePath": "staticwebassets\\assets\\images\\website-images\\service.png"
     },
     {
+      "Id": "C:\\Users\\Asiman\\source\\repos\\PB202-Pronia\\PB202-Pronia\\wwwroot\\assets\\js\\basket.js",
+      "PackagePath": "staticwebassets\\assets\\js\\basket.js"
+    },
+    {
       "Id": "C:\\Users\\Asiman\\source\\repos\\PB202-Pronia\\PB202-Pronia\\wwwroot\\assets\\js\\main.js",
       "PackagePath": "staticwebassets\\assets\\js\\main.js"
     },

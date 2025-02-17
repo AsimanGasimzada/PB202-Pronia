@@ -1,0 +1,68 @@
+﻿@using PB202_Pronia.Services
+
+@inject LayoutService _layoutService
+@{
+    var basketItems = await _layoutService.GetBasketAsync();
+
+    decimal total = basketItems.Sum(x => x.Product.Price * x.Count);
+}
+<div class="offcanvas-body">
+    <div class="minicart-content">
+        <div class="minicart-heading">
+            <h4 class="mb-0">Shopping Cart</h4>
+            <a href="#" class="button-close">
+                <i class="pe-7s-close"
+                   data-tippy="Close"
+                   data-tippy-inertia="true"
+                   data-tippy-animation="shift-away"
+                   data-tippy-delay="50"
+                   data-tippy-arrow="true"
+                   data-tippy-theme="sharpborder"></i>
+            </a>
+        </div>
+        <ul class="minicart-list">
+            @foreach (var basketItem in basketItems)
+            {
+                <li class="minicart-product">
+                    <a class="product-item_remove" asp-action="RemoveToBasket" asp-controller="Basket" asp-route-id="@basketItem.ProductId">
+                        <i class="pe-7s-close"
+                           data-tippy="Remove"
+                           data-tippy-inertia="true"
+                           data-tippy-animation="shift-away"
+                           data-tippy-delay="50"
+                           data-tippy-arrow="true"
+                           data-tippy-theme="sharpborder"></i>
+                    </a>
+                    <a href="single-product-variable.html"
+                       class="product-item_img">
+                        <img class="img-full"
+                             src="~/assets/images/website-images/@basketItem.Product.ProductImages.FirstOrDefault(x=>x.Status==true)?.Url"
+                             alt="Product Image" />
+                    </a>
+                    <div class="product-item_content">
+                        <a class="product-item_title"
+                           href="single-product-variable.html">@basketItem.Product.Name</a>
+                        <span class="product-item_quantity">@basketItem.Count x $@basketItem.Product.Price</span>
+                    </div>
+                </li>
+
+            }
+
+        </ul>
+    </div>
+    <div class="minicart-item_total">
+        <span>Subtotal</span>
+        <span class="ammount">$@total</span>
+    </div>
+    <div class="group-btn_wrap d-grid gap-2">
+        <a href="cart.html" class="btn btn-dark">View Cart</a>
+        <a href="checkout.html" class="btn btn-dark">Checkout</a>
+    </div>
+</div>
+
+    <script>
+                document.querySelector(".basketModalCount").innerHTML=@basketItems.Count
+                document.querySelector(".basketModalCount2").innerHTML=@basketItems.Count
+
+    </script>
+

@@ -41413,6 +41413,88 @@
       ]
     },
     {
+      "Route": "assets/js/basket.4v8mmhke7h.js",
+      "AssetFile": "assets/js/basket.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1245"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YFB4QkiG4S9zVNFfDlY+GptJGbAh2EYX5m/BHOFoIlg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Feb 2025 12:23:39 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4v8mmhke7h"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YFB4QkiG4S9zVNFfDlY+GptJGbAh2EYX5m/BHOFoIlg="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/js/basket.js"
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/basket.js",
+      "AssetFile": "assets/js/basket.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1245"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YFB4QkiG4S9zVNFfDlY+GptJGbAh2EYX5m/BHOFoIlg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Feb 2025 12:23:39 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YFB4QkiG4S9zVNFfDlY+GptJGbAh2EYX5m/BHOFoIlg="
+        }
+      ]
+    },
+    {
       "Route": "assets/js/main.js",
       "AssetFile": "assets/js/main.js",
       "Selectors": [],

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DL7oHM88eoDbpiDB0T4WtbQZl+M9XX18obWv8KswCrE=",
+  "Hash": "+rjyJYkZ3bFRBYJbmFnK5BvzE1p86RQkDZf3d10W1Es=",
   "Source": "PB202-Pronia",
   "BasePath": "_content/PB202-Pronia",
   "Mode": "Default",
@@ -10641,6 +10641,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\website-images\\service.png"
+    },
+    {
+      "Identity": "C:\\Users\\Asiman\\source\\repos\\PB202-Pronia\\PB202-Pronia\\wwwroot\\assets\\js\\basket.js",
+      "SourceId": "PB202-Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asiman\\source\\repos\\PB202-Pronia\\PB202-Pronia\\wwwroot\\",
+      "BasePath": "_content/PB202-Pronia",
+      "RelativePath": "assets/js/basket#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4v8mmhke7h",
+      "Integrity": "YFB4QkiG4S9zVNFfDlY+GptJGbAh2EYX5m/BHOFoIlg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\basket.js"
     },
     {
       "Identity": "C:\\Users\\Asiman\\source\\repos\\PB202-Pronia\\PB202-Pronia\\wwwroot\\assets\\js\\main.js",
@@ -54174,6 +54195,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-/A1yyxYN0TSpHTbOiLcI+jKz0BtLJ0rynaHGNFmekyA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/basket.4v8mmhke7h.js",
+      "AssetFile": "C:\\Users\\Asiman\\source\\repos\\PB202-Pronia\\PB202-Pronia\\wwwroot\\assets\\js\\basket.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1245"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YFB4QkiG4S9zVNFfDlY+GptJGbAh2EYX5m/BHOFoIlg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Feb 2025 12:23:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4v8mmhke7h"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/js/basket.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YFB4QkiG4S9zVNFfDlY+GptJGbAh2EYX5m/BHOFoIlg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/basket.js",
+      "AssetFile": "C:\\Users\\Asiman\\source\\repos\\PB202-Pronia\\PB202-Pronia\\wwwroot\\assets\\js\\basket.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1245"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YFB4QkiG4S9zVNFfDlY+GptJGbAh2EYX5m/BHOFoIlg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Feb 2025 12:23:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YFB4QkiG4S9zVNFfDlY+GptJGbAh2EYX5m/BHOFoIlg="
         }
       ]
     },
